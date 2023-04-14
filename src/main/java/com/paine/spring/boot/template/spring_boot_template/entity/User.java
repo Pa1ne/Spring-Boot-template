@@ -18,7 +18,8 @@ public class User {
     @Column(name = "citizenship")
     private String citizenship;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String firstName, String lastName, String citizenship) {
         this.firstName = firstName;

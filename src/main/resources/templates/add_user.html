@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>Users</title>
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-		crossorigin="anonymous">
-	<script>
-		formatIt = function() {
-			let fn = document.getElementById("firstName");
-			let ln = document.getElementById("lastName");
-			let cp = document.getElementById("citizenship");
-			if (fn.value === "") {
-				alert ("Введите First Name");
-			} else if (ln.value === "") {
-				alert ("Введите Last Name");
-			} else if (cp.value === "") {
-				alert ("Введите Citizenship");
-			}
-		}
-	</script>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script>
+        formatIt = function () {
+            let fn = document.getElementById("firstName");
+            let ln = document.getElementById("lastName");
+            let cp = document.getElementById("citizenship");
+            if (fn.value === "") {
+                alert("Введите First Name");
+            } else if (ln.value === "") {
+                alert("Введите Last Name");
+            } else if (cp.value === "") {
+                alert("Введите Citizenship");
+            }
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand">Create User</a>
+    <!-- Brand -->
+    <a class="navbar-brand">Create User</a>
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/}">List Of Users</a>
-      </li>
-    </ul>
-  </div>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">List Of Users</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <br>
 <br>
-	<div class = "container">
-		<div class = "row">
-			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Create New User </h1>
-				<div class = "card-body">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Create New User </h1>
+            <div class="card-body">
 
-					<form th:action="@{/}" th:object = "${user}" method="POST" onsubmit="formatIt();">
-						<div class ="form-group">
-							<label> User First Name </label>
-							<input
-							id="firstName"
-							type = "text"
-							name = "firstName"
-							th:field = "*{firstName}"
-							class = "form-control"
-							placeholder="Enter User First Name"/>
-						</div>
-						
-						<div class ="form-group">
-							<label> Student Last Name </label>
-							<input
-							id="lastName"
-							type = "text"
-							name = "lastName"
-							th:field = "*{lastName}"
-							class = "form-control"
-							placeholder="Enter User Last Name"/>
-						</div>
-						
-						<div class ="form-group">
-							<label> User Citizenship </label>
-							<input
-							id="citizenship"
-							type = "text"
-							name = "citizenship"
-							th:field = "*{citizenship}"
-							class = "form-control"
-							placeholder="Enter User Citizenship"/>
-						</div>
-						
-						<div class = "box-footer">
-							<button type="submit" class = "btn btn-primary">
-								Submit
-							</button>
-						</div>
-					</form>
+                <form th:action="@{/}" th:object="${user}" method="POST" onsubmit="formatIt();">
+                    <div class="form-group">
+                        <label> User First Name </label>
+                        <input
+                                id="firstName"
+                                type="text"
+                                name="firstName"
+                                th:field="*{firstName}"
+                                class="form-control"
+                                placeholder="Enter User First Name"/>
+                    </div>
 
-				
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="form-group">
+                        <label> Student Last Name </label>
+                        <input
+                                id="lastName"
+                                type="text"
+                                name="lastName"
+                                th:field="*{lastName}"
+                                class="form-control"
+                                placeholder="Enter User Last Name"/>
+                    </div>
 
+                    <div class="form-group">
+                        <label> User Citizenship </label>
+                        <input
+                                id="citizenship"
+                                type="text"
+                                name="citizenship"
+                                th:field="*{citizenship}"
+                                class="form-control"
+                                placeholder="Enter User Citizenship"/>
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </body>
