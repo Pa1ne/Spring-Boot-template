@@ -50,13 +50,7 @@ public class UserController {
     }
 
     @PostMapping("/{id}")
-    public String updateUser(@PathVariable Long id, @ModelAttribute("user") User user) {
-        User UserFromDatabase = userService.getUserById(id);
-        UserFromDatabase.setId(id);
-        UserFromDatabase.setFirstName(user.getFirstName());
-        UserFromDatabase.setLastName(user.getLastName());
-        UserFromDatabase.setCitizenship(user.getCitizenship());
-
+    public String updateUser(@ModelAttribute("user") User user) {
         userService.addOrEditUser(user);
         return "redirect:/";
     }
